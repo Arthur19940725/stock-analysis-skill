@@ -85,7 +85,7 @@ description: This skill should be used when the user asks to analyze this stock,
 python scripts/decision_math.py path/to/input.json
 ```
 
-Forward slashes work with Python on Windows and Unix. On Windows you may also use `path\to\input.json`.
+正斜杠路径在 Windows 与 Unix 的 Python 上均可使用；Windows 也可用 `path\to\input.json`。
 
 使用 `scripts/decision_math.py` 计算 `TR_s`、`ETR`、`EU`、`ED`、`PCR`、`SL`、`H`、`ECS` 与机械评级。禁止手工改变阈值以配合叙事。输入结构、公式和评级门槛见 `references/decision-model.md`。
 
