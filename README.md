@@ -158,7 +158,7 @@ stock-analysis/
 
 Run the tests:
 
-```powershell
+```bash
 python scripts/test_decision_math.py
 ```
 

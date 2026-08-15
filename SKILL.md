@@ -1,6 +1,6 @@
 ---
 name: stock-analysis
-description: This skill should be used when the user asks to "分析这只股票", "给出买入区间或目标价", "做基本面/技术面/风险/财报/股息分析", "筛选股票", "分析板块轮动", "构建 ETF 组合", "设计期权策略", "分析宏观市场", or provides a stock ticker, security, ETF, portfolio, earnings event, or investment thesis that requires source-backed market research and an actionable decision.
+description: This skill should be used when the user asks to analyze this stock, find a target price or buy zone, review fundamentals or technicals, assess risk/earnings/dividends, screen stocks, analyze sector rotation, build an ETF portfolio, design an options strategy, or analyze the macro market; also for Chinese requests such as "分析这只股票", "给出买入区间或目标价", "做基本面/技术面/风险/财报/股息分析", "筛选股票", "分析板块轮动", "构建 ETF 组合", "设计期权策略", "分析宏观市场"; or when they provide a stock ticker, security, ETF, portfolio, earnings event, or investment thesis that requires source-backed market research and an actionable decision.
 ---
 
 # Stock Analysis
@@ -81,9 +81,11 @@ description: This skill should be used when the user asks to "分析这只股票
 
 把三情景、要求回报、证据分和否决项写入 JSON，调用：
 
-```powershell
-python scripts/decision_math.py path\to\input.json
+```bash
+python scripts/decision_math.py path/to/input.json
 ```
+
+正斜杠路径在 Windows 与 Unix 的 Python 上均可使用；Windows 也可用 `path\to\input.json`。
 
 使用 `scripts/decision_math.py` 计算 `TR_s`、`ETR`、`EU`、`ED`、`PCR`、`SL`、`H`、`ECS` 与机械评级。禁止手工改变阈值以配合叙事。输入结构、公式和评级门槛见 `references/decision-model.md`。
 
@@ -112,6 +114,16 @@ python scripts/decision_math.py path\to\input.json
 - `references/decision-model.md`：情景回报、证据评分、机械评级和脚本输入。
 - `references/output-quality.md`：完整报告模板、检查清单、自动失败与更新纪律。
 - `frameworks/00-thesis-driven-research.md`：十模块总控依赖、HANDOFF 和专项工作流。
-- `frameworks/01-10*.md`：兼容原有基本面、技术、风险、财报、股息、板块、筛选、ETF、期权和宏观专项入口。
+- 专项框架（与上方路由表一致）：
+  - `frameworks/01-coverage-memo.md`
+  - `frameworks/02-technical-panel.md`
+  - `frameworks/03-risk-framework.md`
+  - `frameworks/04-earnings-analyzer.md`
+  - `frameworks/05-dividend-analyzer.md`
+  - `frameworks/06-sector-rotation.md`
+  - `frameworks/07-quant-screener.md`
+  - `frameworks/08-etf-portfolio.md`
+  - `frameworks/09-options-architect.md`
+  - `frameworks/10-macro-outlook.md`
 - `scripts/decision_math.py`：确定性评级计算与输入验证。
 - `scripts/test_decision_math.py`：核心边界与降级测试。
