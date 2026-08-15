@@ -103,4 +103,3 @@ Place tests in the tests/ or __tests__/ directory, mirroring src structure
 
 - Separate test directory pattern detected
 - Tests live in dedicated test folders
-
